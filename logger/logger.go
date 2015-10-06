@@ -2,7 +2,6 @@ package logger
 
 import (
 	"io"
-	"lemon/exceptions"
 	"log"
 	"os"
 )
@@ -58,7 +57,7 @@ func NewFileLogger(fullFilePath string) (*Logger, error) {
 	file, err := os.OpenFile(fullFilePath, os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0640)
 
 	if err != nil {
-		return NewStdLogger(), exceptions.LoggerFallbackWarning
+		return NewStdLogger(), LoggerFallbackWarning
 	}
 
 	return newLogger(file), nil

@@ -1,4 +1,4 @@
-package lemon
+package main
 
 func main() {
 
